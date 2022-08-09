@@ -17,7 +17,9 @@ MESSAGE( " *** OpenCV_INCLUDE_DIRS : " ${OpenCV_INCLUDE_DIRS} )
 MESSAGE( " *** OpenCV_LIB_DIRS : " ${OpenCV_LIB_DIRS} )
 MESSAGE( " *** OpenCV_LIBS : " ${OpenCV_LIBS} )
 
-find_package(pybind11 CONFIG REQUIRED)
+if(NOT pybind11_FOUND)
+  find_package(pybind11 CONFIG REQUIRED)
+endif()
 MESSAGE( " *** PYTHON_INCLUDE_DIRS : " ${PYTHON_INCLUDE_DIRS} )
 MESSAGE( " *** PYTHON_LIBRARIES : " ${PYTHON_LIBRARIES} )
 
